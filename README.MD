@@ -8,7 +8,7 @@ Usually, an existed NPM package can just be used in TypeScript if a type definit
 
 ### Installation
 
-If you are looking for a NPM package in javascript, @caseycefari/GeoJSON.js will be your best fit. If you want to use this in typescript environment, you can feel free to download `geojson.ts` or `git clone (this repo)`. 
+If you are looking for a NPM package in javascript, @caseycefari/GeoJSON.js will be your best fit. If you want to use this in typescript environment (e.g. Angular, React working in Typescript, etc), you can feel free to download `geojson.ts` or `git clone https://github.com/eugeneYWang/GeoJSON.ts`. 
 
 ### Use case
 
@@ -46,4 +46,6 @@ You can see more usage on [Casey's README](https://github.com/caseycesari/GeoJSO
 
 ### Welcome to throw your ideas to me!
 
-If you have any idea to make this library better, please feel free to drop a post on issue and "at" @EugeneYWang. If it is a new feature request, you may also want to drop a post to @caseycesari/GeoJSON.js. If I make any new feature to this librayr, I will contribute its codes to @caseycesari/GeoJSON.js
+If you have any idea to make this library better, please feel free to drop a post on issue and "at" @EugeneYWang. If it is a new feature request, you may also want to drop a post to @caseycesari/GeoJSON.js. If I make any new feature to this library, I will contribute its codes to @caseycesari/GeoJSON.js
+
+I am wondering if I need to occupy a spot at NPM, but I am not sure if I have to contribute a javscript version. I do not want to do is to take place of GeoJSON.js, so if NPM does not accept Typescript at all, I might not make it in NPM. If you have any idea to spread this Typescript library easily without hurting GeoJSON.js, please let me know! I will be willing to make this more accessible! 

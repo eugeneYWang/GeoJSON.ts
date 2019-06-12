@@ -2,15 +2,15 @@
   "name": "geojsonts",
   "version": "0.5.0",
   "description": "To convert json object into GeoJSON. A library written in TypeScript, inspired by @caseycesari/GeoJSON  ",
-  "homepage":"",
+  "homepage":"https://github.com/eugeneYWang/GeoJSON.ts",
   "main": "geojson.ts",
   "author": "Yujie(Eugene) Wang",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/eugeneYWang/GeoJSON.ts"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/eugeneYWang/GeoJSON.ts/issues"
   }
 }

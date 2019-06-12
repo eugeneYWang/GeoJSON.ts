@@ -1,6 +1,6 @@
 # GeoJSON.ts, a GeoJSON Parser in TypeScript
 
-Turn your geo data info GeoJSON, as a parser, innovated by @caseycesari/GeoJSON.js in javascript. @EugeneYWang/GeoJSON.ts is that library in TS.
+Turn your geo data info GeoJSON, as a parser, innovated by [@caseycesari/GeoJSON.js](https://github.com/caseycesari/GeoJSON.js) in javascript. @EugeneYWang/GeoJSON.ts is that library in TS.
 
 ### The reason to create this repo
 
@@ -46,6 +46,6 @@ You can see more usage on [Casey's README](https://github.com/caseycesari/GeoJSO
 
 ### Welcome to throw your ideas to me!
 
-If you have any idea to make this library better, please feel free to drop a post on issue and "at" @EugeneYWang. If it is a new feature request, you may also want to drop a post to @caseycesari/GeoJSON.js. If I make any new feature to this library, I will contribute its codes to @caseycesari/GeoJSON.js
+If you have any idea to make this library better, please feel free to drop a post on issue and "at" @EugeneYWang. If it is a new feature request, you may also want to drop a post to @caseycesari/GeoJSON.js. If I make any new feature to this library, I will contribute its codes to [@caseycesari/GeoJSON.js](https://github.com/caseycesari/GeoJSON.js)
 
 I am wondering if I need to occupy a spot at NPM, but I am not sure if I have to contribute a javscript version. I do not want to do is to take place of GeoJSON.js, so if NPM does not accept Typescript at all, I might not make it in NPM. If you have any idea to spread this Typescript library easily without hurting GeoJSON.js, please let me know! I will be willing to make this more accessible! 

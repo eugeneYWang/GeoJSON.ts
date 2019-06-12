@@ -1,5 +1,5 @@
 export class GeoJSON {
-  version: string = "0.5.0";
+  version = "0.5.0";
   private geomAttrs = [];
   private geoms = [
     "Point",
@@ -83,7 +83,7 @@ export class GeoJSON {
   private applyDefaults(params: object, defaults: object): object {
     let settings = params || {};
 
-    for (var setting in settings) {
+    for (let setting in settings) {
       if (defaults.hasOwnProperty(setting) && !settings[setting]) {
         settings[setting] = defaults[setting];
       }
@@ -96,15 +96,18 @@ export class GeoJSON {
   // if they have been specified
   private addOptionals(geojson, settings) {
     if (settings.crs && this.checkCRS(settings.crs)) {
-      if (settings.isPostgres) geojson.geometry.crs = settings.crs;
-      else geojson.crs = settings.crs;
+      if (settings.isPostgres) {
+        geojson.geometry.crs = settings.crs;
+      } else {
+        geojson.crs = settings.crs;
+      }
     }
     if (settings.bbox) {
       geojson.bbox = settings.bbox;
     }
     if (settings.extraGlobal) {
       geojson.properties = {};
-      for (var key in settings.extraGlobal) {
+      for (let key in settings.extraGlobal) {
         geojson.properties[key] = settings.extraGlobal[key];
       }
     }
@@ -136,7 +139,7 @@ export class GeoJSON {
   private setGeom(params: any): void {
     params.geom = {};
 
-    for (var param in params) {
+    for (let param in params) {
       if (params.hasOwnProperty(param) && this.geoms.indexOf(param) !== -1) {
         params.geom[param] = params[param];
         delete params[param];
@@ -151,7 +154,7 @@ export class GeoJSON {
   // properties to the features so that no geometry
   // fields are added the properties key
   private setGeomAttrList(params: any): void {
-    for (var param in params) {
+    for (let param in params) {
       if (params.hasOwnProperty(param)) {
         if (typeof params[param] === "string") {
           this.geomAttrs.push(params[param]);
@@ -171,7 +174,7 @@ export class GeoJSON {
   // Creates a feature object to be added
   // to the GeoJSON features array
   private getFeature(args): object {
-    var item = args.item,
+    let item = args.item,
       params = args.params,
       propFunc = args.propFunc;
 
@@ -192,11 +195,11 @@ export class GeoJSON {
   // Assembles the `geometry` property
   // for the feature output
   private buildGeom(item, params): any {
-    var geom = {};
+    let geom = {};
     //   attr;
 
-    for (var gtype in params.geom) {
-      var val = params.geom[gtype];
+    for (let gtype in params.geom) {
+      let val = params.geom[gtype];
 
       // Geometry parameter specified as: {Point: 'coords'}
       if (typeof val === "string" && item.hasOwnProperty(val)) {
@@ -208,15 +211,15 @@ export class GeoJSON {
         }
       } else if (typeof val === "object" && !Array.isArray(val)) {
         /* Handle things like:
-      Polygon: {
-        northeast: ['lat', 'lng'],
-        southwest: ['lat', 'lng']
-      }
-      */
+          Polygon: {
+            northeast: ['lat', 'lng'],
+            southwest: ['lat', 'lng']
+          }
+          */
         /*jshint loopfunc: true */
-        var points = Object.keys(val).map(function(key) {
-          var order = val[key];
-          var newItem = item[key];
+        let points = Object.keys(val).map(function(key) {
+          let order = val[key];
+          let newItem = item[key];
           return this.buildGeom(newItem, { geom: { Point: order } });
         });
         geom["type"] = gtype;
@@ -226,10 +229,8 @@ export class GeoJSON {
             return p.coordinates;
           })
         );
-      }
-
-      // Geometry parameter specified as: {Point: ['lat', 'lng', 'alt']}
-      else if (
+      } else if (
+        // Geometry parameter specified as: {Point: ['lat', 'lng', 'alt']}
         Array.isArray(val) &&
         item.hasOwnProperty(val[0]) &&
         item.hasOwnProperty(val[1]) &&
@@ -241,27 +242,23 @@ export class GeoJSON {
           Number(item[val[0]]),
           Number(item[val[2]])
         ];
-      }
-
-      // Geometry parameter specified as: {Point: ['lat', 'lng']}
-      else if (
+      } else if (
+        // Geometry parameter specified as: {Point: ['lat', 'lng']}
         Array.isArray(val) &&
         item.hasOwnProperty(val[0]) &&
         item.hasOwnProperty(val[1])
       ) {
         geom["type"] = gtype;
         geom["coordinates"] = [Number(item[val[1]]), Number(item[val[0]])];
-      }
-
-      // Geometry parameter specified as: {Point: ['container.lat', 'container.lng', 'container.alt']}
-      else if (
+      } else if (
+        // Geometry parameter specified as: {Point: ['container.lat', 'container.lng', 'container.alt']}
         Array.isArray(val) &&
         this.isNested(val[0]) &&
         this.isNested(val[1]) &&
         this.isNested(val[2])
       ) {
-        var coordinates = [];
-        for (var i = 0; i < val.length; i++) {
+        let coordinates = [];
+        for (let i = 0; i < val.length; i++) {
           // i.e. 0 and 1
           var paths = val[i].split(".");
           var itemClone = item;
@@ -302,10 +299,8 @@ export class GeoJSON {
         }
         geom["type"] = gtype;
         geom["coordinates"] = [Number(coordinates[1]), Number(coordinates[0])];
-      }
-
-      // Geometry parameter specified as: {Point: [{coordinates: [lat, lng]}]}
-      else if (
+      } else if (
+        // Geometry parameter specified as: {Point: [{coordinates: [lat, lng]}]}
         Array.isArray(val) &&
         val[0].constructor.name === "Object" &&
         Object.keys(val[0])[0] === "coordinates"
@@ -405,3 +400,5 @@ let res1 = geo.parse(data, { Point: ["lat", "lng"] });
 console.log(res);
 
 console.log(res1);
+
+console.log("end");

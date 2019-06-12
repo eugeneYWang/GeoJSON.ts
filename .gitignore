@@ -1,0 +1,8 @@
+geojsonTS.js
+
+// vs code files
+.vscode/*
+.vscode
+
+out/*
+out

@@ -1,11 +1,16 @@
 {
-  "name": "geojsonparserts",
+  "name": "geojsonts",
   "version": "0.5.0",
   "description": "To convert json object into GeoJSON. A library written in TypeScript, inspired by @caseycesari/GeoJSON  ",
-  "main": "geojsonTS.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "homepage":"",
+  "main": "geojson.ts",
+  "author": "Yujie(Eugene) Wang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
   },
-  "author": "Eugene Wang",
-  "license": "MIT"
+  "bugs": {
+    "url": ""
+  }
 }

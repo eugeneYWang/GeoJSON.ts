@@ -13,7 +13,7 @@ If you are looking for a NPM package in javascript, @caseycefari/GeoJSON.js will
 ### Use case
 
 ```
-import { GeoJSON } from 'geojson'; // path to geojson.ts
+import { GeoJSON } from './pathTo/geojson'; // path to geojson.ts
 
 const geo = new GeoJSON();
 const data = {

@@ -2,6 +2,8 @@
 
 Turn your geo data info GeoJSON, as a parser, innovated by [@caseycesari/GeoJSON.js](https://github.com/caseycesari/GeoJSON.js) in javascript. @EugeneYWang/GeoJSON.ts is that library in TS.
 
+This library will match the updates of GeoJSON.ts
+
 ### The reason to create this repo
 
 Usually, an existed NPM package can just be used in TypeScript if a type definition file with the same name of that package is also installed. So why should I refactor that library into this typescript one? The reason is that the type definition named as GeoJSON has been occupied as the type definition of GeoJSON standard specification. Therefore, no one could contribute a type definition in TypeDefinition for @caseycesari/GeoJSON.js.
